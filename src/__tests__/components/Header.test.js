@@ -1,10 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import Header from "../../components/Header/Header";
 
-it("should render same text passed into title prop", () => {
-  render(<Header title="My Header" />);
-  const headingElement = screen.getByText(/my header/i);
-  expect(headingElement).toBeInTheDocument();
+describe("Header", () => {
+  it("should render same text passed into title prop", () => {
+    render(<Header title="My Header" />);
+    const headingElement = screen.getByText(/my header/i);
+    expect(headingElement).toBeInTheDocument();
+  });
 });
 
 // This will fail if we got two or more heading tags
